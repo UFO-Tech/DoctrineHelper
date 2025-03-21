@@ -13,16 +13,15 @@ abstract class AbstractEnumType extends Type
 
     public function getSQLDeclaration(array $column, AbstractPlatform $platform): string
     {
-        $values = array_map(function($val) { return "'$val->value'"; }, $this->enum::cases());
-        return "ENUM(".implode(", ", $values).")";
+        $values = array_map(fn($val) => "'{$val->value}'", $this->enum::cases());
+        return sprintf("ENUM(%s)", implode(", ", $values));
     }
-
-    public function convertToPHPValue($value, AbstractPlatform $platform)
+    public function convertToPHPValue(mixed $value, AbstractPlatform $platform): mixed
     {
         return $value;
     }
 
-    public function convertToDatabaseValue($value, AbstractPlatform $platform)
+    public function convertToDatabaseValue(mixed $value, AbstractPlatform $platform): string|int
     {
         try {
             return $this->enum::from($value)->value;

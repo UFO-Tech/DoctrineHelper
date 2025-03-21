@@ -37,6 +37,8 @@ doctrine:
     dbal:
         types:
             App\MyEnum: 'App\DBAL\MyEnumType'
+        mapping_types:
+            enum: string
 ```
 
 ### 4. Use your php enum for set and change value

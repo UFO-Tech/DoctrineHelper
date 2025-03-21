@@ -2,7 +2,7 @@
   "name": "ufo-tech/doctrine-helper",
   "description": "A set of ready-made solutions for Doctrine (traits, interfaces, classes) that allows you to get rid of routine and speeds up development",
   "minimum-stability": "stable",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "authors": [
     {
