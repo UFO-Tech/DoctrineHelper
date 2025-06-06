@@ -2,7 +2,7 @@
   "name": "ufo-tech/doctrine-helper",
   "description": "A set of ready-made solutions for Doctrine (traits, interfaces, classes) that allows you to get rid of routine and speeds up development",
   "minimum-stability": "stable",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "license": "MIT",
   "authors": [
     {
@@ -15,17 +15,25 @@
   "keywords" : ["doctrine", "helpers", "traits", "interfaces", "behavior"],
   "require" : {
     "php": ">=8.3",
-    "ramsey/uuid": "*"
+    "ramsey/uuid": "*",
+    "doctrine/dbal": "^4",
+    "doctrine/orm": "^2.12|^3.2"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^12"
   },
   "autoload" : {
     "psr-4" : {
-      "Ufo\\DoctrineHelper\\": "src/"
+      "Ufo\\DoctrineHelper\\": "src/",
+      "Ufo\\DoctrineHelper\\Tests\\": "tests/"
     }
   },
   "extra" : {
   },
   "scripts": {
-    "auto-scripts": {
-    }
+    "test": [
+      "@putenv APP_ENV=test",
+      "php vendor/bin/phpunit --display-deprecations --display-errors"
+    ]
   }
 }

@@ -6,10 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Ufo\DoctrineHelper\Utils\Uuid;
 use Doctrine\DBAL\Types\Types;
 
-/**
- * @deprecated Use UuidIdTrait instead
- */
-trait UniqueUuidIdTrait
+trait UuidIdTrait
 {
     #[ORM\Column(type: Types::STRING, length: 36, unique: true)]
     #[ORM\Id]

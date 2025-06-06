@@ -6,18 +6,17 @@ use Doctrine\ORM\Mapping as ORM;
 use Ufo\DoctrineHelper\Utils\Uuid;
 use Doctrine\DBAL\Types\Types;
 
-/**
- * @deprecated Use UuidIdTrait instead
- */
-trait UniqueUuidIdTrait
+use function uniqid;
+
+trait UniqueIdTrait
 {
-    #[ORM\Column(type: Types::STRING, length: 36, unique: true)]
+    #[ORM\Column(type: Types::STRING, length: 13, unique: true)]
     #[ORM\Id]
     protected string $id;
 
     protected function generateUniqueId(): void
     {
-        $this->id = Uuid::generate();
+        $this->id = uniqid();
     }
 
     /**
@@ -26,10 +25,5 @@ trait UniqueUuidIdTrait
     public function getId(): string
     {
         return $this->id;
-    }
-
-    public static function uniqueIdFromString(string $string): string
-    {
-        return Uuid::hash($string);
     }
 }

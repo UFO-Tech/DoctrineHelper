@@ -10,7 +10,7 @@ class Uuid
      */
     public static function generate(): string
     {
-        return \Ramsey\Uuid\Uuid::uuid4()->toString();
+        return \Ramsey\Uuid\Uuid::uuid7()->toString();
     }
 
     /**

@@ -1,9 +1,9 @@
 <?php
 
-namespace Ufo\DoctrineHelper\DBAL;
+namespace Ufo\DoctrineHelper\Tests\Fixtures;
 
 use BackedEnum;
-use Ufo\DoctrineHelper\ExampleEnum;
+use Ufo\DoctrineHelper\DBAL\AbstractEnumType;
 
 class ExampleEnumType extends AbstractEnumType
 {

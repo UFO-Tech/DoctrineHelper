@@ -1,6 +1,6 @@
 <?php
 
-namespace Ufo\DoctrineHelper;
+namespace Ufo\DoctrineHelper\Tests\Fixtures;
 
 enum ExampleEnum: string
 {
