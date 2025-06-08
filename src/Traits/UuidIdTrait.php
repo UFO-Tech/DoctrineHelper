@@ -8,8 +8,9 @@ use Doctrine\DBAL\Types\Types;
 
 trait UuidIdTrait
 {
-    #[ORM\Column(type: Types::STRING, length: 36, unique: true)]
     #[ORM\Id]
+    #[ORM\Column(type: Types::STRING, length: 36, unique: true)]
+    #[ORM\GeneratedValue(strategy: 'NONE')]
     protected string $id;
 
     protected function generateUniqueId(): void
