@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 trait AutoIncrementIdTrait
 {
     #[ORM\Id]
-    #[ORM\Column(type: Types::INTEGER, options: ['unsigned' => true, 'autoincrement' => true])]
+    #[ORM\Column(type: Types::INTEGER, options: ['unsigned' => true])]
     #[ORM\GeneratedValue]
     protected ?int $id = null;
 
